@@ -247,6 +247,10 @@ bindsym $mod+u exec --no-startup-id xbacklight -inc 10, exec --no-startup-id pki
 # decrease screen brightness
 bindsym $mod+i exec --no-startup-id xbacklight -dec 10, exec --no-startup-id pkill -SIGRTMIN+11 i3blocks
 
+# switch screen
+bindsym $mod+t move workspace to output primary
+bindsym $mod+Shift+t move workspace to output eDP1
+
 #screenshot
 bindsym $mod+shift+s exec --no-startup-id $HOME/.config/i3/ss.sh
 
@@ -258,3 +262,4 @@ bindsym $mod+d exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -pa
 #wallpaper
 exec_always --no-startup-id feh --bg-scale /home/beristain/Pictures/wallpaper.jpg
 exec_always --no-startup-id compton -f
+exec_always --no-startup-id xrandr --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off
